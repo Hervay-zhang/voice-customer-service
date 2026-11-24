@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>语音请假 · 云声工作台</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/leave.css?v=1">
+</head>
+<body>
+  <div class="glow one"></div><div class="glow two"></div>
+  <header>
+    <a class="brand" href="/"><span>声</span><b>云声工作台<small>EMPLOYEE SERVICE</small></b></a>
+    <a class="back" href="/">← 返回智能客服</a>
+  </header>
+  <main>
+    <section class="intro">
+      <div class="tag">VOICE LEAVE REQUEST</div>
+      <h1>说一句话，<br><em>轻松完成请假</em></h1>
+      <p>你可以直接填写表单，也可以用自然语言描述请假安排。系统识别后会自动填写，提交前仍可修改。</p>
+      <div class="example"><span>试着说</span><p>“我明天请一天事假，家里有点事情。”</p></div>
+      <div class="steps"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span><p>语音描述</p><p>确认信息</p><p>提交申请</p></div>
+    </section>
+
+    <section class="card">
+      <div class="card-head"><div><small>NEW REQUEST</small><h2>请假申请</h2></div><span class="draft">草稿</span></div>
+      <div class="voice-box" id="voiceBox">
+        <button id="micBtn" type="button" aria-label="开始语音输入"><i></i></button>
+        <div><b id="voiceTitle">点击麦克风，说出请假安排</b><p id="transcript">例如：下周一上午请半天年假，去办理证件</p></div>
+        <span class="waves"><i></i><i></i><i></i><i></i></span>
+      </div>
+      <div class="divider"><span>或手动填写</span></div>
+      <form id="leaveForm">
+        <div class="field full"><label for="leaveType">请假类型</label><select id="leaveType" required><option value="">请选择</option><option>事假</option><option>病假</option><option>年假</option><option>调休</option><option>婚假</option><option>产假</option><option>陪产假</option><option>其他</option></select></div>
+        <div class="field"><label for="startDate">开始日期</label><input id="startDate" type="date" required></div>
+        <div class="field"><label for="endDate">结束日期</label><input id="endDate" type="date" required></div>
+        <div class="field full"><label>请假时段</label><div class="segments"><label><input type="radio" name="period" value="全天" checked><span>全天</span></label><label><input type="radio" name="period" value="上午"><span>上午</span></label><label><input type="radio" name="period" value="下午"><span>下午</span></label></div></div>
+        <div class="field full"><label for="reason">请假事由</label><textarea id="reason" rows="3" maxlength="300" placeholder="请简单说明请假原因" required></textarea><small><span id="count">0</span>/300</small></div>
+        <div class="summary" id="summary"><span>预计时长</span><b id="duration">请完善日期</b></div>
+        <button class="submit" type="submit">确认并提交申请 <span>→</span></button>
+      </form>
+      <div class="success" id="success"><span>✓</span><h3>请假申请已提交</h3><p id="successText"></p><button type="button" id="againBtn">再提交一条</button></div>
+    </section>
+  </main>
+  <script src="/static/leave.js?v=4"></script>
+</body>
+</html>

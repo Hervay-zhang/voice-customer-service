@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="基于火山方舟的智能语音客服工作台">
+  <title>云声 · 智能客服</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/layout-fixes.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="返回首页"><span class="brand-mark">声</span><span><b id="companyName">云声科技</b><small>AI SERVICE DESK</small></span></a>
+      <div class="top-actions"><a href="/call" class="leave-entry">呼叫手机</a><a href="/leave" class="leave-entry">语音请假</a><span class="status"><i></i> 服务在线</span><button class="icon-btn" id="soundToggle" aria-label="切换语音播报">◕</button></div>
+    </header>
+
+    <section class="workspace">
+      <aside class="profile-panel">
+        <div class="eyebrow">VOICE ASSISTANT</div>
+        <div class="orb" id="orb"><span class="orb-core"></span><span class="ring ring-1"></span><span class="ring ring-2"></span></div>
+        <h1>你好，我是<span id="serviceName">小云</span></h1>
+        <p>随时倾听你的问题。按住下方按钮说话，或在对话框中输入内容。</p>
+        <div class="capabilities">
+          <div><span>01</span><p><b>自然对话</b><small>理解上下文，连续沟通</small></p></div>
+          <div><span>02</span><p><b>即时响应</b><small>火山方舟模型实时生成</small></p></div>
+          <div><span>03</span><p><b>语音播报</b><small>自动朗读客服回复</small></p></div>
+        </div>
+      </aside>
+
+      <section class="chat-panel" aria-label="客服对话">
+        <div class="chat-head"><div><span class="avatar">云</span><p><b>智能客服</b><small><i></i> 正在为你服务</small></p></div><button id="clearBtn" class="text-btn">清空对话</button></div>
+        <div class="messages" id="messages" aria-live="polite">
+          <div class="message assistant"><span class="mini-avatar">云</span><div class="bubble"><p>你好！很高兴为你服务。请问今天有什么可以帮你？</p><time>刚刚</time></div></div>
+        </div>
+        <div class="suggestions" id="suggestions">
+          <button>查询订单进度</button><button>了解退款流程</button><button>转接人工客服</button>
+        </div>
+        <form class="composer" id="chatForm">
+          <button type="button" class="mic-btn" id="micBtn" aria-label="开始语音输入"><span>●</span></button>
+          <textarea id="input" rows="1" maxlength="2000" placeholder="输入你的问题，或点击麦克风说话…" aria-label="消息内容"></textarea>
+          <button class="send-btn" id="sendBtn" type="submit" aria-label="发送消息">发送 <span>↗</span></button>
+        </form>
+        <p class="hint" id="hint">语音服务由浏览器提供，请允许麦克风权限</p>
+      </section>
+    </section>
+  </main>
+  <script src="/static/app.js?v=2"></script>
+</body>
+</html>

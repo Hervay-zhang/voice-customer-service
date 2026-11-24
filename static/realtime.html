@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>云声 · 实时语音客服</title><link rel="stylesheet" href="/static/realtime.css">
+</head>
+<body>
+  <div class="glow one"></div><div class="glow two"></div>
+  <main>
+    <nav><div class="brand"><b>云</b><span id="company">云声科技</span></div><div class="badge"><i id="statusDot"></i><span id="navStatus">正在检查服务</span></div></nav>
+    <section class="hero">
+      <div><p class="kicker">SEEDUPLEX REALTIME SERVICE</p><h1>像真人一样，<br><em>听懂并回应。</em></h1><p class="lead">全双工实时语音客服，支持自然打断、低延迟响应和连续上下文。</p></div>
+      <aside><span>当前模型</span><strong id="model">1.2.6.1</strong><small>火山引擎 · 豆包实时语音 3.0</small></aside>
+    </section>
+    <section class="console">
+      <div class="call-panel">
+        <div class="call-top"><span>实时会话</span><time id="timer">00:00</time></div>
+        <div class="orb-wrap"><canvas id="wave" width="480" height="210"></canvas><button id="callButton" class="call-button" aria-label="开始通话"><span class="phone">⌁</span></button></div>
+        <h2 id="callTitle">准备开始</h2><p id="callHint">点击按钮，与 <span id="serviceName">小云</span> 实时通话</p>
+        <div class="controls"><button id="muteButton" disabled>麦克风开启</button><button id="hangupButton" class="hangup" disabled>结束通话</button></div>
+      </div>
+      <div class="transcript-panel">
+        <div class="transcript-head"><div><p class="kicker">LIVE TRANSCRIPT</p><h2>实时对话</h2></div><button id="clearButton">清空</button></div>
+        <div id="transcript" class="transcript"><div class="empty"><span>◌</span><p>通话开始后，对话内容将在这里实时显示</p></div></div>
+        <div id="errorBox" class="error hidden"></div>
+      </div>
+    </section>
+    <section id="setup" class="setup hidden"><b>还差一步即可开始</b><p>请在项目的 <code>.env</code> 文件中填写 <code>VOLC_REALTIME_API_KEY</code>，然后重启服务。</p><a href="https://console.volcengine.com/speech/new/setting/apikeys?projectName=default" target="_blank" rel="noreferrer">前往火山控制台创建 API Key →</a></section>
+    <footer><span>Powered by Volcengine Seeduplex</span><span>通话内容可能由 AI 生成，请勿提供密码等敏感信息</span></footer>
+  </main>
+  <script type="module" src="/static/realtime.js?v=2"></script>
+</body></html>

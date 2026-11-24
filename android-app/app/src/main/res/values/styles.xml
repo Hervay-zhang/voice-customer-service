@@ -1,0 +1,1 @@
+<resources><style name="Theme.Yunsheng" parent="Theme.MaterialComponents.DayNight.NoActionBar"><item name="android:fontFamily">sans</item><item name="android:colorAccent">#28715F</item><item name="android:navigationBarColor">#F3F2EC</item><item name="android:statusBarColor">#F3F2EC</item><item name="android:windowLightStatusBar">true</item></style></resources>
